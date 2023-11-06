@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
-export const StyledSwitcher = styled.div<{ isSelected: boolean }>`
+export const StyledSwitcher = styled.div.withConfig({
+  shouldForwardProp: (prop: unknown) => prop !== 'isSelected',
+})<{ isSelected?: boolean }>`
   position: relative;
   height: 32px;
   width: 72px;
@@ -26,7 +28,7 @@ export const StyledSwitcher = styled.div<{ isSelected: boolean }>`
     display: block;
     content: '';
     top: 0;
-    right: 0;
+    left: 0;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -34,9 +36,11 @@ export const StyledSwitcher = styled.div<{ isSelected: boolean }>`
     transition: transform 300ms ease-in-out;
   }
 
-  ${({ isSelected }) => isSelected && css`
-    &:after {
-      transform: translateX(-40px);
-    }
-  `}
+  ${({ isSelected }) =>
+    isSelected &&
+    css`
+      &:after {
+        transform: translateX(40px);
+      }
+    `}
 `;

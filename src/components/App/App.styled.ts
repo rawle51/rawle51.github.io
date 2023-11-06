@@ -5,7 +5,6 @@ export const StyledContainer = styled.div`
   padding: 32px 0;
   background-color: ${({ theme }) => theme.colors.primaryBackgroundColor};
   color: ${({ theme }) => theme.colors.primaryTextColor};
-
 `;
 
 export const StyledInner = styled.div`
@@ -15,6 +14,10 @@ export const StyledInner = styled.div`
 `;
 
 export const GlobalStyles = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     font-family: 'Inter', sans-serif;

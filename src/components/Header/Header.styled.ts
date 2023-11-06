@@ -7,9 +7,10 @@ const rotate = keyframes`
 `;
 
 export const StyledContainer = styled.header`
+  margin-bottom: 280px;
 `;
 
-export const StyledTopBlock = styled.header`
+export const StyledTopBlock = styled.div`
   display: flex;
   justify-content: space-between;
 `;
@@ -42,7 +43,11 @@ export const StyledTextRow = styled.div`
   justify-content: space-between;
 `;
 
-export const StyledTitle = styled.p<{ offesetLeft?: number; offesetRight?: number; align?: 'left' | 'right' }>`
+export const StyledTitle = styled.p<{
+  offesetLeft?: number;
+  offesetRight?: number;
+  align?: 'left' | 'right';
+}>`
   margin: 0;
   font-size: ${({ theme }) => theme.fontSizes.xxl}px;
   font-family: 'Soyuz Grotesk', 'Roboto', sans-serif;

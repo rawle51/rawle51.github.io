@@ -1,4 +1,6 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+
+const INITIAL_THEME_VALUE = 'initial-theme';
 
 export enum ThemeType {
   light = 'light',
@@ -6,7 +8,12 @@ export enum ThemeType {
 }
 
 export const primaryBlack = '#191919';
-export const primaryWhite = '#fff'
+export const primaryWhite = '#fff';
+export const accentViolet = '#9747ff';
+export const accentVioletActive = '#8539e7';
+const neutralBlack = '#1e1e1e';
+const secondaryWhite = '#f6f6f6';
+const secondaryBlack = '#939393';
 
 type FontSize = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
 
@@ -14,8 +21,11 @@ interface ThemeShape {
   colors: {
     primaryTextColor: string;
     primaryBackgroundColor: string;
+    secondaryTextColor: string;
+    secondaryBackgroundColor: string;
+    accentTextColor: string;
   };
-  fontSizes: Record<FontSize, number>
+  fontSizes: Record<FontSize, number>;
 }
 
 const fontSizes: Record<FontSize, number> = {
@@ -25,13 +35,16 @@ const fontSizes: Record<FontSize, number> = {
   l: 48,
   xl: 70,
   xxl: 120,
-}
+};
 
 const themeShape: Record<ThemeType, ThemeShape> = {
   [ThemeType.light]: {
     colors: {
       primaryTextColor: primaryBlack,
       primaryBackgroundColor: primaryWhite,
+      secondaryTextColor: primaryBlack,
+      secondaryBackgroundColor: secondaryWhite,
+      accentTextColor: accentViolet,
     },
     fontSizes,
   },
@@ -39,10 +52,13 @@ const themeShape: Record<ThemeType, ThemeShape> = {
     colors: {
       primaryTextColor: primaryWhite,
       primaryBackgroundColor: primaryBlack,
+      secondaryTextColor: secondaryBlack,
+      secondaryBackgroundColor: neutralBlack,
+      accentTextColor: primaryWhite,
     },
     fontSizes,
   },
-}
+};
 
 interface ThemeContextShape {
   themeType: ThemeType;
@@ -57,24 +73,31 @@ const ThemeContext = createContext<ThemeContextShape>({
 });
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const [themeType, setTheme] = useState<ThemeType>(ThemeType.dark);
+  const themeFromLocalStorage = localStorage.getItem(INITIAL_THEME_VALUE) as ThemeType | null;
+  const [themeType, setTheme] = useState<ThemeType>(themeFromLocalStorage ?? ThemeType.dark);
 
   const handleThemeChange = () => {
-    setTheme((theme) => theme === ThemeType.dark ? ThemeType.light : ThemeType.dark);
-  }
+    setTheme((theme) => {
+      const newTheme = theme === ThemeType.dark ? ThemeType.light : ThemeType.dark;
+      localStorage.setItem(INITIAL_THEME_VALUE, newTheme);
+
+      return newTheme;
+    });
+  };
+
+  useEffect(() => {
+    if (!themeFromLocalStorage) {
+      localStorage.setItem(INITIAL_THEME_VALUE, ThemeType.dark);
+    }
+  }, [themeFromLocalStorage]);
 
   const value = {
     themeType,
     theme: themeShape[themeType],
     setTheme: handleThemeChange,
-  }
-  return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
-  );
-}
-
+  };
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+};
 
 export function useThemeContext() {
   return useContext(ThemeContext);
