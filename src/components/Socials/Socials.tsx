@@ -1,4 +1,4 @@
-import { ArrorIcon } from '../icons/Arror';
+import { ArrowIcon } from '../icons';
 
 import { StyledItem, StyledLink, StyledList } from './Socials.styled';
 
@@ -26,7 +26,7 @@ export const Socials = () => (
     {socialsList.map(({ name, link }) => (
       <StyledItem key={name}>
         <StyledLink href={link} target="_blank" rel="noreferrer">
-          <ArrorIcon />
+          <ArrowIcon />
           {name}
         </StyledLink>
       </StyledItem>

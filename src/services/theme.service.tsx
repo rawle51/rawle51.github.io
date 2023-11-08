@@ -34,7 +34,7 @@ const fontSizes: Record<FontSize, number> = {
   m: 24,
   l: 48,
   xl: 70,
-  xxl: 120,
+  xxl: 110,
 };
 
 const themeShape: Record<ThemeType, ThemeShape> = {

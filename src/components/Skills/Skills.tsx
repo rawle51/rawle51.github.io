@@ -14,9 +14,11 @@ export const Skills = () => (
   <StyledContainer>
     <Subtitle>Key skills</Subtitle>
     <StyledList>
-      {skillsConfig.map(({ title, description, icon }, idx) => (
+      {skillsConfig.map(({ title, description, icon: Icon }, idx) => (
         <StyledListItem key={title}>
-          <StyledIcon src={icon}></StyledIcon>
+          <StyledIcon>
+            <Icon />
+          </StyledIcon>
           <StyledTitle>{title}</StyledTitle>
           <StyledText>{description}</StyledText>
           <StyledNum as="span">0{idx + 1}</StyledNum>

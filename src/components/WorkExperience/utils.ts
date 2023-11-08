@@ -1,27 +1,34 @@
+export enum WorkCompany {
+  osome = 'Osome',
+  tinkoff = 'Tinkoff',
+  busfor = 'Busfor',
+  htmlAcademy = 'HTML Academy',
+}
+
 export const workExperienceConfig = [
   {
-    companyName: 'Osome',
-    position: 'Senior software engineer',
-    date: '',
+    companyName: WorkCompany.osome,
+    position: 'Senior software\nengineer',
+    date: '2021 +',
     description: '',
     skills: ['React', 'TypeScript', 'Node', 'AWS', 'PostgreSQL', 'Styled-components'],
   },
   {
-    companyName: 'Tinkoff',
+    companyName: WorkCompany.tinkoff,
     position: 'Senior frontend developer',
-    date: '',
+    date: '2019 - 2021',
     description: '',
     skills: ['React', 'TypeScript', 'Node', 'AWS', 'PostgreSQL', 'Styled-components'],
   },
   {
-    companyName: 'Busfor',
+    companyName: WorkCompany.busfor,
     position: 'Frontend developer',
-    date: '',
+    date: '2018 - 2020',
     description: '',
     skills: ['React', 'TypeScript', 'Node', 'AWS', 'PostgreSQL', 'Styled-components'],
   },
   {
-    companyName: 'HTML Academy',
+    companyName: WorkCompany.htmlAcademy,
     position: 'Mentorship Advisor',
     date: '2018 +',
     description:

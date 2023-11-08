@@ -22,6 +22,7 @@ import {
   primaryWhite,
   useThemeContext,
 } from '../../services/theme.service';
+import { AccentText } from '../Typography/Typography';
 
 export const Header = () => {
   const { themeType } = useThemeContext();
@@ -31,28 +32,35 @@ export const Header = () => {
       <StyledTopBlock>
         <StyledLogo>rawle</StyledLogo>
         <StyledNavWrapper>
-          <StyledLink href="#contacts">Contacts</StyledLink>
+          <StyledLink href="#contact">Contact</StyledLink>
           <ThemeSwitcher />
         </StyledNavWrapper>
       </StyledTopBlock>
       <StyledMiddleBlock>
         <StyledTextRow>
-          <StyledTitle>Software</StyledTitle>
+          <StyledTitle offesetLeft={170}>Software</StyledTitle>
         </StyledTextRow>
         <StyledTextRow>
-          <StyledTitle offesetLeft={100}>engineer</StyledTitle>
+          <StyledTitle>engineer</StyledTitle>
           <StyledTitle>Konstantin</StyledTitle>
         </StyledTextRow>
         <StyledTextRow>
-          <StyledTitle align="left" offesetRight={100}>
+          <StyledTitle margin="left" offesetRight={320}>
             Antonov
           </StyledTitle>
         </StyledTextRow>
       </StyledMiddleBlock>
       <StyledBottomBlock>
         <StyledText>
-          Hey everyone! I’m Konstantin <br />
-          and I’m full stack developer. I live in the Netherlands, Amsterdam.
+          Hey there! I'm Konstantin, originally from Moscow
+          <br />
+          <span>and currently residing in Rotterdam,</span>
+          <br />
+          I'm a software engineer with a strong proficiency in JavaScript,
+          <br />
+          a deep passion for innovation,
+          <br />
+          and a talent for developing complex, high-performance applications.
         </StyledText>
         <StyledImageWrapper>
           <StyledImage width={380} height={221} src="/assets/main-photo.jpg" alt="Logo" />

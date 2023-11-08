@@ -6,7 +6,7 @@ import { StyledButtonWrapper, StyledText } from './Footer.styled';
 
 export const Footer = () => {
   return (
-    <footer id="contacts">
+    <footer id="contact">
       <Subtitle>contacts</Subtitle>
       <StyledText>
         I am <AccentText>eager</AccentText> to connect with others in the tech industry to discuss

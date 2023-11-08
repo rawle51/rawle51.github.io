@@ -4,43 +4,48 @@ export const StyledSwitcher = styled.div.withConfig({
   shouldForwardProp: (prop: unknown) => prop !== 'isSelected',
 })<{ isSelected?: boolean }>`
   position: relative;
-  height: 32px;
-  width: 72px;
+  height: 26px;
+  width: 44px;
   display: flex;
   align-items: center;
   cursor: pointer;
 
-  &:before {
-    position: absolute;
-    display: block;
-    content: '';
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 10px;
-    border-radius: 8px;
-    background-color: ${({ theme }) => theme.colors.primaryTextColor};
-  }
-
+  &:before,
   &:after {
     position: absolute;
     display: block;
     content: '';
     top: 0;
-    left: 0;
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
-    background-color: ${({ theme }) => theme.colors.primaryTextColor};
+    border: 1px solid;
+    box-sizing: border-box;
     transition: transform 300ms ease-in-out;
+  }
+
+  &:before {
+    left: 0;
+    background-color: ${({ theme }) => theme.colors.primaryTextColor};
+  }
+
+  &:after {
+    right: 0;
+    border-color: ${({ theme }) => theme.colors.primaryTextColor};
   }
 
   ${({ isSelected }) =>
     isSelected &&
     css`
+      &:before {
+        transform: translateX(18px);
+        background-color: transparent;
+        border-color: ${({ theme }) => theme.colors.primaryTextColor};
+      }
+
       &:after {
-        transform: translateX(40px);
+        transform: translateX(-18px);
+        background-color: ${({ theme }) => theme.colors.primaryTextColor};
       }
     `}
 `;

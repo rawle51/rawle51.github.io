@@ -5,12 +5,16 @@ export const StyledContainer = styled.div`
   padding: 32px 0;
   background-color: ${({ theme }) => theme.colors.primaryBackgroundColor};
   color: ${({ theme }) => theme.colors.primaryTextColor};
+  transition:
+    background-color 150ms ease-in,
+    color 150ms ease-in;
 `;
 
 export const StyledInner = styled.div`
-  max-width: 1200px;
-  padding: 0 32px;
+  max-width: 1240px;
+  padding: 0 20px;
   margin: 0 auto;
+  box-sizing: border-box;
 `;
 
 export const GlobalStyles = createGlobalStyle`

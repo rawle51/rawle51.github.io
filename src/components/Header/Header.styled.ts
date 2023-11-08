@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { accentViolet, accentVioletActive } from '../../services/theme.service';
 
 const rotate = keyframes`
   100% {
@@ -7,7 +8,7 @@ const rotate = keyframes`
 `;
 
 export const StyledContainer = styled.header`
-  margin-bottom: 280px;
+  margin-bottom: 180px;
 `;
 
 export const StyledTopBlock = styled.div`
@@ -26,6 +27,15 @@ export const StyledLink = styled.a`
   text-decoration: none;
   font-size: ${({ theme }) => theme.fontSizes.s}px;
   color: ${({ theme }) => theme.colors.primaryTextColor};
+  transition: color 150ms ease-in;
+
+  &:hover {
+    color: ${accentViolet};
+  }
+
+  &:active {
+    color: ${accentVioletActive};
+  }
 `;
 
 export const StyledNavWrapper = styled.div`
@@ -35,18 +45,21 @@ export const StyledNavWrapper = styled.div`
 `;
 
 export const StyledMiddleBlock = styled.div`
-  margin-top: 120px;
+  margin-top: 60px;
 `;
 
 export const StyledTextRow = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 10;
 `;
 
 export const StyledTitle = styled.p<{
   offesetLeft?: number;
   offesetRight?: number;
-  align?: 'left' | 'right';
+  margin?: 'left' | 'right';
 }>`
   margin: 0;
   font-size: ${({ theme }) => theme.fontSizes.xxl}px;
@@ -55,7 +68,7 @@ export const StyledTitle = styled.p<{
   padding-left: ${({ offesetLeft }) => offesetLeft ?? 0}px;
   padding-right: ${({ offesetRight }) => offesetRight ?? 0}px;
 
-  ${({ align }) => align && `margin-${align}: auto`};
+  ${({ margin }) => margin && `margin-${margin}: auto`};
 `;
 
 export const StyledBottomBlock = styled.div`
@@ -66,6 +79,7 @@ export const StyledBottomBlock = styled.div`
 
 export const StyledImageWrapper = styled.div`
   position: relative;
+  transform: translateY(-100px);
 `;
 
 export const StyledImage = styled.img`
@@ -85,4 +99,5 @@ export const StyledCicle = styled.div`
 export const StyledText = styled.p`
   margin: 0;
   font-size: ${({ theme }) => theme.fontSizes.s}px;
+  align-self: center;
 `;

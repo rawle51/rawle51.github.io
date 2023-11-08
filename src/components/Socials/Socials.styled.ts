@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { accentViolet, accentVioletActive } from '../../services/theme.service';
-import { ArrorIcon } from '../icons/Arror';
 
 export const StyledList = styled.ul`
   display: flex;
