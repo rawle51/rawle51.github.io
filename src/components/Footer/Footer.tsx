@@ -7,10 +7,11 @@ import { StyledButtonWrapper, StyledText } from './Footer.styled';
 export const Footer = () => {
   return (
     <footer id="contact">
-      <Subtitle>contacts</Subtitle>
+      <Subtitle>contact</Subtitle>
       <StyledText>
-        I am <AccentText>eager</AccentText> to connect with others in the tech industry to discuss
-        opportunities, exchange ideas and thoughts, or collaborate on projects.
+        I'm enthusiastic about <AccentText>networking</AccentText> with fellow <AccentText>professionals</AccentText> in the
+        tech industry to explore opportunities, share ideas, and&nbsp;
+        <AccentText>collaborate</AccentText> on projects.
       </StyledText>
       <StyledButtonWrapper>
         <LinkButton href="mailto:51stateco@gmail.com">Drop me an email</LinkButton>

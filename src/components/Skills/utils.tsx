@@ -12,19 +12,19 @@ export const skillsConfig = [
     icon: DesignFeatureIcon,
     title: 'Designing systems',
     description:
-      'Deployment of the application on servers using technologies such as Docker, Kubernetes and web hosting providers (for example, AWS, Azure, Heroku). Monitor and manage servers to ensure high availability and performance.',
+      'Specialized in designing robust and scalable software systems, leveraging a comprehensive understanding of software engineering principles to architect and implement solutions that optimize performance and meet business objectives.',
   },
   {
     icon: FrontendFeatureIcon,
     title: 'Building UI',
     description:
-      'Deployment of the application on servers using technologies such as Docker, Kubernetes and web hosting providers (for example, AWS, Azure, Heroku). Monitor and manage servers to ensure high availability and performance.',
+      'Seasoned in crafting dynamic and visually engaging user interfaces, demonstrating expertise in utilizing React, Vue, and Angular to develop modern and responsive web applications with a focus on user-centric design principles.',
   },
   {
     icon: BackendFeatureIcon,
-    title: 'backend',
+    title: 'Server Programming',
     description:
-      'Deployment of the application on servers using technologies such as Docker, Kubernetes and web hosting providers (for example, AWS, Azure, Heroku). Monitor and manage servers to ensure high availability and performance.',
+      'Experienced in server programming, specializing in Node.js, serverless architectures, and leveraging cloud technologies such as AWS, with expertise in database integration for the development of scalable and efficient backend solutions.',
   },
   {
     icon: TestingFeatureIcon,

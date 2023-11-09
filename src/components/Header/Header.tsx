@@ -22,7 +22,6 @@ import {
   primaryWhite,
   useThemeContext,
 } from '../../services/theme.service';
-import { AccentText } from '../Typography/Typography';
 
 export const Header = () => {
   const { themeType } = useThemeContext();
@@ -53,14 +52,7 @@ export const Header = () => {
       <StyledBottomBlock>
         <StyledText>
           Hey there! I'm Konstantin, originally from Moscow
-          <br />
-          <span>and currently residing in Rotterdam,</span>
-          <br />
-          I'm a software engineer with a strong proficiency in JavaScript,
-          <br />
-          a deep passion for innovation,
-          <br />
-          and a talent for developing complex, high-performance applications.
+          and currently residing in Rotterdam.
         </StyledText>
         <StyledImageWrapper>
           <StyledImage width={380} height={221} src="/assets/main-photo.jpg" alt="Logo" />

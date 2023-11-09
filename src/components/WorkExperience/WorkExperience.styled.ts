@@ -98,4 +98,5 @@ export const StyledBadge = styled.span`
   background-color: ${accentViolet};
   border-radius: 16px;
   font-size: ${({ theme }) => theme.fontSizes.xs}px;
+  text-transform: none;
 `;
