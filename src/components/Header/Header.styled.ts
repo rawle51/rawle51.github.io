@@ -8,7 +8,7 @@ const rotate = keyframes`
 `;
 
 export const StyledContainer = styled.header`
-  margin-bottom: 180px;
+  margin-bottom: 280px;
 `;
 
 export const StyledTopBlock = styled.div`
@@ -56,7 +56,9 @@ export const StyledTextRow = styled.div`
   z-index: 10;
 `;
 
-export const StyledTitle = styled.p<{
+export const StyledTitle = styled.p.withConfig({
+  shouldForwardProp: (prop: string) => !['offesetLeft', 'offesetRight'].includes(prop),
+})<{
   offesetLeft?: number;
   offesetRight?: number;
   margin?: 'left' | 'right';
@@ -72,14 +74,21 @@ export const StyledTitle = styled.p<{
 `;
 
 export const StyledBottomBlock = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 16px;
+  z-index: 1;
 `;
 
 export const StyledImageWrapper = styled.div`
-  position: relative;
-  transform: translateY(-100px);
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  right: 0;
+  z-index: -1;
 `;
 
 export const StyledImage = styled.img`

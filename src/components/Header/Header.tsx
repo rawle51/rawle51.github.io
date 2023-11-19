@@ -37,23 +37,27 @@ export const Header = () => {
       </StyledTopBlock>
       <StyledMiddleBlock>
         <StyledTextRow>
-          <StyledTitle offesetLeft={170}>Software</StyledTitle>
+          <StyledTitle offesetLeft={200}>Software</StyledTitle>
         </StyledTextRow>
         <StyledTextRow>
           <StyledTitle>engineer</StyledTitle>
           <StyledTitle>Konstantin</StyledTitle>
         </StyledTextRow>
-        <StyledTextRow>
-          <StyledTitle margin="left" offesetRight={320}>
-            Antonov
-          </StyledTitle>
-        </StyledTextRow>
       </StyledMiddleBlock>
       <StyledBottomBlock>
-        <StyledText>
-          Hey there! I'm Konstantin, originally from Moscow
-          and currently residing in Rotterdam.
-        </StyledText>
+        <div>
+          <StyledText>
+            Hey there, I'm Konstantin.
+            <br />
+            A skilled individual hailing from Moscow
+            <br />
+            and presently based in Rotterdam.
+          </StyledText>
+        </div>
+        <StyledTitle margin="left" offesetRight={300}>
+          Antonov
+        </StyledTitle>
+        
         <StyledImageWrapper>
           <StyledImage width={380} height={221} src="/assets/main-photo.jpg" alt="Logo" />
           <StyledCicle>

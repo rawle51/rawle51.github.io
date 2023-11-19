@@ -9,8 +9,9 @@ export const Footer = () => {
     <footer id="contact">
       <Subtitle>contact</Subtitle>
       <StyledText>
-        I'm enthusiastic about <AccentText>networking</AccentText> with fellow <AccentText>professionals</AccentText> in the
-        tech industry to explore opportunities, share ideas, and&nbsp;
+        I'm enthusiastic about <AccentText>networking</AccentText> with fellow{' '}
+        <AccentText>professionals</AccentText> in the tech industry to explore opportunities, share
+        ideas, and&nbsp;
         <AccentText>collaborate</AccentText> on projects.
       </StyledText>
       <StyledButtonWrapper>
