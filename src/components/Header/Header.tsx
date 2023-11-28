@@ -8,7 +8,7 @@ import {
   StyledTopBlock,
   StyledNavWrapper,
   StyledImageWrapper,
-  StyledCicle,
+  StyledCircle,
   StyledImage,
   StyledBottomBlock,
   StyledText,
@@ -37,7 +37,7 @@ export const Header = () => {
       </StyledTopBlock>
       <StyledMiddleBlock>
         <StyledTextRow>
-          <StyledTitle offesetLeft={200}>Software</StyledTitle>
+          <StyledTitle offsetLeft={200}>Software</StyledTitle>
         </StyledTextRow>
         <StyledTextRow>
           <StyledTitle>engineer</StyledTitle>
@@ -47,20 +47,19 @@ export const Header = () => {
       <StyledBottomBlock>
         <div>
           <StyledText>
-            Hey there, I'm Konstantin.
+            Hey there, I&apos;m Konstantin.
             <br />
             A skilled individual hailing from Moscow
             <br />
             and presently based in Rotterdam.
           </StyledText>
         </div>
-        <StyledTitle margin="left" offesetRight={300}>
+        <StyledTitle margin="left" offsetRight={300}>
           Antonov
         </StyledTitle>
-        
         <StyledImageWrapper>
           <StyledImage width={380} height={221} src="/assets/main-photo.jpg" alt="Logo" />
-          <StyledCicle>
+          <StyledCircle>
             <ReactCurvedText
               width={240}
               height={240}
@@ -68,12 +67,12 @@ export const Header = () => {
               cy={120}
               rx={95}
               ry={95}
-              reversed={true}
+              reversed
               text="Rawle . Rawle . Rawle . Rawle . Rawle . Rawle . Rawle ."
               textProps={{ style: { fontSize: 20, textTransform: 'uppercase' } }}
               svgProps={{ fill: themeType === ThemeType.dark ? primaryWhite : primaryBlack }}
             />
-          </StyledCicle>
+          </StyledCircle>
         </StyledImageWrapper>
       </StyledBottomBlock>
     </StyledContainer>

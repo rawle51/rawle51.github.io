@@ -27,7 +27,7 @@ export const WorkExperience = () => {
 
   return (
     <StyledContainer>
-      <Subtitle>work expirience</Subtitle>
+      <Subtitle>Work experience</Subtitle>
       <StyledList>
         {workExperienceConfig.map(({ companyName, date, position, description, skills }) => (
           <StyledItem key={companyName}>

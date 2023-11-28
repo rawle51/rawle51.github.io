@@ -57,18 +57,18 @@ export const StyledTextRow = styled.div`
 `;
 
 export const StyledTitle = styled.p.withConfig({
-  shouldForwardProp: (prop: string) => !['offesetLeft', 'offesetRight'].includes(prop),
+  shouldForwardProp: (prop: string) => !['offsetLeft', 'offsetRight'].includes(prop),
 })<{
-  offesetLeft?: number;
-  offesetRight?: number;
+  offsetLeft?: number;
+  offsetRight?: number;
   margin?: 'left' | 'right';
 }>`
   margin: 0;
   font-size: ${({ theme }) => theme.fontSizes.xxl}px;
   font-family: 'Soyuz Grotesk', 'Roboto', sans-serif;
   text-transform: uppercase;
-  padding-left: ${({ offesetLeft }) => offesetLeft ?? 0}px;
-  padding-right: ${({ offesetRight }) => offesetRight ?? 0}px;
+  padding-left: ${({ offsetLeft }) => offsetLeft ?? 0}px;
+  padding-right: ${({ offsetRight }) => offsetRight ?? 0}px;
 
   ${({ margin }) => margin && `margin-${margin}: auto`};
 `;
@@ -96,7 +96,7 @@ export const StyledImage = styled.img`
   z-index: 1;
 `;
 
-export const StyledCicle = styled.div`
+export const StyledCircle = styled.div`
   position: absolute;
   display: block;
   left: -120px;

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect, useMemo } from 'react';
 
 const INITIAL_THEME_VALUE = 'initial-theme';
 
@@ -91,11 +91,15 @@ export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [themeFromLocalStorage]);
 
-  const value = {
-    themeType,
-    theme: themeShape[themeType],
-    setTheme: handleThemeChange,
-  };
+  const value = useMemo(
+    () => ({
+      themeType,
+      theme: themeShape[themeType],
+      setTheme: handleThemeChange,
+    }),
+    [themeType],
+  );
+
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 };
 
